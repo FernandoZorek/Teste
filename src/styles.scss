@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+body, a{
+    color:#000;
+    min-width:920px;}
+a:hover{
+    font-weight: bold;
+    }
+table{
+    color:#000; 
+    margin: -1px 0;
+    min-width:920px;}
+th{
+    text-align: center;
+    }
+th:nth-child(1) {
+    text-align: left;
+    }
+  .table thead th {
+        font-size: 12px;}
+  .tableinterna{
+    padding:0px;
+    width:100%;}
+  .firstable td:nth-child(1) {
+    background-color:#F5F5F5;
+    background: linear-gradient(to right, #3FC3A2 50%, #F5F5F5 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 1s ease-out;
+    }
+  .firstable td:nth-child(1):hover {
+    background-position: left bottom;
+      }
+  .firstable 	td:nth-child(2) {
+      background-color:#B2EBF2;text-align: center;
+      }
+  .firstable td:nth-child(3) {
+      background-color:#F96585;text-align: center;
+      }
+  .firstable td:nth-child(4) {
+      background-color:#F98585;text-align: center;
+      }
+  .firstable td:nth-child(5) {
+      background-color:#F9A385;text-align: center;
+      }
+  .firstable td:nth-child(6) {
+      background-color:#F9BE85;text-align: center;
+      }
+  .firstable td:nth-child(7) {
+      background-color:#B2EBF2;text-align: center;
+      }
+  tr:hover{filter: brightness(90%);}
+  th {
+    background-color:#102938;color:#fff;border: 1px solid #102938;
+    }
+    th, td, tr, thead, th, .table thead th, td:active, tr:active, table::active, th:active {
+      border: 0px solid rgb(56 56 56 / 9%);
+  }
+  *, *::before, *::after {
+    border: 0px solid rgb(56 56 56 / 9%);
+  }
+  .secondtable td:nth-child(1) {
+    background-color:#F1F1F1;
+    }
+    .secondtable td:nth-child(1):hover,.secondtable td:hover,.firstable tr:nth-child(2) {
+      background-color:#F1F1F1;border: 0px;cursor: auto;
+      }
+    .secondtable 	td:nth-child(2) {
+      background-color:#F9F9F9;
+      }
+    .secondtable td:nth-child(3) {
+      background-color:#F1F1F1;
+      }
+    .secondtable td:nth-child(4) {
+      background-color:#F9F9F9;
+      }
+    .secondtable td:nth-child(5) {
+      background-color:#F1F1F1;
+      }
+    .secondtable td:nth-child(6) {
+      background-color:#F9F9F9;
+      }
+    .secondtable td:nth-child(7) {
+      background-color:#F1F1F1;
+      }
+     .secondtable td:nth-child(8) {
+      background-color:#F9F9F9;
+      }
+      
+ .anime-on{width:100%;max-height:5000px;overflow: hidden;transition: max-height 3s ease-in-out;}
+ .anime-off{width:100%;overflow: hidden; max-height: 0;  pointer-events: none;}

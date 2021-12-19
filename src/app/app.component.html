@@ -1,0 +1,59 @@
+<style>table{margin: -1px 0;}.tableinterna{padding:0px;width:100%;}a{color:#000; text-decoration: none;}</style>
+ 
+<table class="table">
+  <thead>
+    <th scope="col" width="30%">TAREFAS</th>
+    <th scope="col" width="20%">VENCIDOS</th>
+    <th scope="col" width="10%">D0</th>
+    <th scope="col" width="10%">D1</th>
+    <th scope="col" width="10%">D2</th>
+    <th scope="col" width="10%">D3</th>
+    <th scope="col" width="10%">TOTAL</th>
+  </thead>
+</table>
+<div *ngIf="Listando$ | async as dados">
+  <table *ngFor="let item of dados; let i = index" class="firstable table">
+    <thead>
+      <tr>
+      <td width="30%">{{item.TAREFA}}</td>
+      <td width="20%"><a href="#{{i}}" onclick="mostrar(this, 'VENCIDO')" *ngIf="item.VENCIDO > 0 && i !=4">{{item.VENCIDO}}</a><span *ngIf="item.VENCIDO == 0 || i == 4">{{item.VENCIDO}}</span></td>
+      <td width="10%"><a href="#{{i}}" onclick="mostrar(this, 'D0')" *ngIf="item.D0 > 0 && i !=4">{{item.D0}}</a><span *ngIf="item.D0 == 0 || i == 4">{{item.D0}}</span></td>
+      <td width="10%"><a href="#{{i}}" onclick="mostrar(this, 'D1')" *ngIf="item.D1 > 0 && i !=4">{{item.D1}}</a><span *ngIf="item.D1 == 0 || i == 4">{{item.D1}}</span></td>
+      <td width="10%"><a href="#{{i}}" onclick="mostrar(this, 'D2')" *ngIf="item.D2 > 0 && i !=4">{{item.D2}}</a><span *ngIf="item.D2 == 0 || i == 4">{{item.D2}}</span></td>
+      <td width="10%"><a href="#{{i}}" onclick="mostrar(this, 'D3')" *ngIf="item.D3 > 0 && i !=4">{{item.D3}}</a><span *ngIf="item.D3 == 0 || i == 4">{{item.D3}}</span></td>
+      <td width="10%">{{item.VENCIDO+item.D0+item.D1+item.D2+item.D3}}</td>      
+      </tr>
+  </thead>
+  <tbody>
+  <tr style="filter: brightness(100%);">
+    <td  colspan="7" class="tableinterna"><div id="geral-{{i}}" class="anime-off">
+    <table class="secondtable table" id="tablesys-{{i}}">
+      <thead>
+      <tr>
+        <th>INSTÂNCIA</th>
+        <th>PROTOCOLO</th>
+        <th>RÉGUA</th>
+        <th>SLA</th>
+        <th>STATUS</th>
+        <th>TIPO DE SOLICITAÇÃO</th>
+        <th>INÍCIO</th>
+        <th>OPERADOR</th>
+      </tr>
+    </thead>
+      <tbody><tr *ngFor="let novo of item.DRILLDOWN; let a = index"  style="display:none;" class="table table-hover {{novo.REGUA}}-{{i}}">
+            <td>{{novo.INSTANCIA}}</td>
+            <td>{{novo.PROTOCOLO}}</td>
+            <td>{{novo.REGUA}}</td>
+            <td>{{novo.SLA}}</td>
+            <td>{{novo.STATUS}}</td>
+            <td>{{novo.TIPO_SOLICITACAO}}</td>
+            <td>{{novo.inicio}}</td>
+            <td>{{novo.operador}}</td>
+          </tr>
+      </tbody>
+      </table></div>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
